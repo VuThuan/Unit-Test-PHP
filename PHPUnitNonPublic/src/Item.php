@@ -22,7 +22,7 @@ class Item
      * 
      * @return interger The ID
      */
-    private function getID()
+    protected function getID()
     {
         return rand();
     }
@@ -35,5 +35,16 @@ class Item
     private function getToken()
     {
         return uniqid();
+    }
+
+    /**
+     * Get a random token with a specified prefix
+     * 
+     * @param string $prefix token prefix
+     * @return string The token
+     */
+    private function getPrefixedToken($prefix)
+    {
+        return uniqid($prefix);
     }
 }
